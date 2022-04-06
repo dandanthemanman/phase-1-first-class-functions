@@ -1,0 +1,86 @@
+// function Monday() {
+//   console.log("Go for a five-mile run");
+//   console.log("pump iron");
+// }
+
+// function Tuesday() {
+//   console.log("Go for a five-mile run");
+//   console.log("Swim 40 laps");
+// }
+
+// function Wednesday () {
+//   console.log("Go for a five-mile run");
+//   console.log("Go for a five-mile run");
+// }
+
+// function Thursday () {
+//   console.log("Go for a five-mile run");
+//   console.log("Pump iron");
+// }
+
+// function Friday () {
+//   console.log("Go for a five-mile run");
+//   console.log("Swim 40 laps");
+// }
+
+function runFiveMiles () {
+  console.log("Go for a five-mile run");
+}
+
+function liftWeights() {
+  console.log("Pump iron")
+}
+
+function swimFortyLaps() {
+  console.log("Swim 40 laps");
+}
+
+// exercise functions^^
+
+function Monday() {
+  runFiveMiles();
+  liftWeights;
+}
+
+// take the second activity as param.
+
+function exerciseRoutine(postRunActivity) {
+  runFiveMiles();
+  postRunActivity();
+}
+
+// ^postRunActivity is a callback function
+
+function Monday() {
+  exerciseRoutine(liftWeights);
+}
+
+// Inline Functions
+
+// passing an anon.fn to exerciseRoutine 3 ways:
+
+exerciseRoutine(function () {
+  console.log("Stretch! Work that core!");
+});
+
+exerciseRoutine(()=> {console.log("Stretch! Work that core!")});
+
+exerciseRoutine(()=>console.log("Stretch that core!"))
+
+// Returning Functions
+// decide breakfast based off exercise vv
+
+function morningRoutine(exercise) {
+  let breakfast;
+
+  if (exercise === liftWeights) {
+    breakfast = "protein bar";
+  } else if (exercise ===swimFortyLaps) {
+    breakfast = "kale smoothie";
+  } else {
+    breakfast = "granola";
+  }
+
+  exerciseRoutine(exercise);
+
+  
